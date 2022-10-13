@@ -8,7 +8,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp1= NULL;
+	listint_t *tmp1 = NULL;
 	listint_t *tmp2 = NULL;
 	listint_t *tmp3 = NULL;
 	int i;
@@ -29,19 +29,19 @@ void insertion_sort_list(listint_t **list)
 				tmp3->next = tmp2;
 				if (tmp2->next != NULL)
 					tmp2->next->prev = tmp2;
-				
+
 				if (tmp2->prev == tmp1)
 					tmp1 = tmp2;
-				
+
 				if (tmp3->prev == NULL)
 					*list = tmp3;
 				else
 					tmp3->prev->next = tmp3;
-				
+
 				tmp2 = tmp3->prev;
 				print_list(*list);
 			}
 			tmp1 = tmp1->next;
-   		}
+		}
 	}
 }
