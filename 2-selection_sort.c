@@ -21,11 +21,13 @@ void selection_sort(int *array, size_t size)
 			for (j = i + 1; j < size; j++)
 				if (array[j] < array[min_idx])
 					min_idx = j;
-
-			tmp = array[min_idx];
-			array[min_idx] = array[i];
-			array[i] = tmp;
-			print_array(array, size);
+			if (min_idx != i)
+			{
+				tmp = array[min_idx];
+				array[min_idx] = array[i];
+				array[i] = tmp;
+				print_array(array, size);
+			}
 		}
 	}
 }
